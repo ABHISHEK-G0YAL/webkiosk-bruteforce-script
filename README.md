@@ -1,5 +1,5 @@
 # webkiosk-brute-force-script
-Simple python script, nothing fancy, just for fun, to get webkiosk passwords....🙃
+Simple python script, nothing fancy, just for fun, to get webkiosk passwords....🙃\n
 Basically, for "parents part" of webkiosk, the password has a general pattern, and that is what I exploited.
 ## Usage:
 ```bash
