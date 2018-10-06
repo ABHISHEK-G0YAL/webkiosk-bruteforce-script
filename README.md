@@ -13,4 +13,4 @@ python all_pwd.py <roll_no>
 ```
 `If birthdate is unknown:  It will take time, alot of it`
 
-enjoy....🙃
+enjoy....😊
