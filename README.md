@@ -8,9 +8,10 @@ python script2.py <roll_no> <birthdate>
 `birthdate in format as:
   29 Feb 2013 === 29022013`
 
-`Or if birthdate is unknown:
-  PS it will take time`
+
 ```bash
 python all_pwd.py <roll_no>
 ```
+`Or if birthdate is unknown:
+  PS it will take time`
 enjoy....🙃
