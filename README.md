@@ -5,13 +5,12 @@ Basically, for "parents part" of webkiosk, the password has a general pattern, a
 ```bash
 python script2.py <roll_no> <birthdate>
 ```
-`birthdate in format as:
-  29 Feb 2013 === 29022013`
+`birthdate in format as:  29 Feb 2013 === 29022013`
 
-
+OR
 ```bash
 python all_pwd.py <roll_no>
 ```
-`Or if birthdate is unknown:
-  PS it will take time`
+`If birthdate is unknown:  It will take time, alot of it`
+
 enjoy....🙃
