@@ -19,9 +19,7 @@ def connect(url, m_data):
 def controller():
 	psswds = open('new_dict').read().split('\n')
 	for i, line in enumerate(psswds):
-		chk = f'Trying {line + sys.argv[2]} | {i} of {len(psswds)}'
-		sys.stdout.write("\r\x1b[K"+chk)
-		sys.stdout.flush()
+		print(f'\rTrying {line + sys.argv[2]} | {i} of {len(psswds)}', end='', flush=True)
 		connect(url, {
 			'UserType' : 'P',
 			'MemberCode' : sys.argv[1],
