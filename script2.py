@@ -4,17 +4,17 @@ from bs4 import BeautifulSoup as bs
 
 url='https://webkiosk.thapar.edu/CommonFiles/UserAction.jsp'
 
-def connect(url,m_data):
+def connect(url, m_data):
 	# print("requesting data:")
-	resp=requests.post(url,data=m_data)
+	resp = requests.post(url, data=m_data)
 	# print("parsing data:")
-	soup=bs(resp.text,'html.parser')
-	x=soup.find_all('frame')
+	soup = bs(resp.text, 'html.parser')
 	# print("checking data:")
-	if(len(x)!=0):
-		print("\nPassword is "+m_data["Password"])
+	x = soup.find_all('frame')
+	if(len(x) != 0):
+		print("Password is " + m_data["Password"])
 		sys.exit()
-	resp = requests.post(url,data=m_data)
+	# print("done")
 
 def controller():
 	m={}
